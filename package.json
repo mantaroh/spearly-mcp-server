@@ -1,0 +1,29 @@
+{
+  "name": "@mantaroh/spearly-mcp-server",
+  "version": "1.0.0",
+  "description": "Spearly MCP Server for Cursor IDE",
+  "main": "src/index.js",
+  "license": "MIT",
+  "author": "mantaroh",
+  "dependencies": {
+    "@types/node": "^22.15.30",
+    "axios": "^1.9.0",
+    "mastra": "^0.10.3"
+  },
+  "scripts": {
+    "mcp": "mastra mcp"
+  },
+  "keywords": [
+    "spearly",
+    "cursor",
+    "mcp",
+    "ide"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mantaroh/spearly-mcp-server.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
