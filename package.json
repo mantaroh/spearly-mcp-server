@@ -1,6 +1,6 @@
 {
   "name": "@mantaroh/spearly-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Spearly MCP Server for Cursor IDE",
   "main": "src/index.js",
   "license": "MIT",

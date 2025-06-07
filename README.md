@@ -4,27 +4,41 @@ Spearly CMSのコンテンツを検索・取得・修正・追加するための
 
 ## 利用方法
 
-### 1. インストール
+### 1. 設定
 
-```bash
-npm install
+`.cursor/mcp.json`に以下の設定を追加します：
+
+```json
+{
+    "mcpServers": {
+        "spearly": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@spearly/mcp-server@latest",
+                "--spearly-api-key=YOUR_API_KEY"
+            ]
+        }
+    }
+}
 ```
 
-### 2. APIキーの設定
+`YOUR_API_KEY`を実際のSpearly APIキーに置き換えてください。
 
-APIキーは以下のいずれかの方法で設定できます：
+### 2. Cursorでの利用
 
-- 環境変数: `SPEARLY_API_KEY`
-- コマンドライン引数: `--spearly-api-key=YOUR_API_KEY`
-- `.cursor/mcp.json` の `args` に `--spearly-api-key=YOUR_API_KEY` を追加
+#### AIアシスタントとの対話による利用
 
-### 3. MCPサーバーの起動
+CursorのAIアシスタントに自然な形で質問することで、Spearlyのコンテンツを取得できます。
 
-```bash
-npm run mcp
-```
+例：
+- 「Spearlyの記事一覧を取得して」
+- 「Spearlyのブログ記事を検索して」
+- 「Spearlyの特定の記事の内容を教えて」
 
-### 4. Cursorでの利用
+AIアシスタントは自動的にMCPを使用して、要求されたコンテンツを取得し、適切な形式で表示します。
+
+#### MCPパネルでの直接利用
 
 1. Cursorの「MCP」パネルを開く
 2. 「spearly」MCPを選択
@@ -53,26 +67,6 @@ await spearly.listContents({ contentType: 'article' });
 ```typescript
 // MCPパネルで以下のように呼び出し
 await spearly.getContent({ contentType: 'article', contentId: '123' });
-```
-
-### 5. 開発
-
-#### ディレクトリ構成
-
-- `src/spearlyClient.ts`: Spearly CMS APIクライアント
-- `src/tools/spearlyTool.ts`: mastraのToolとしての実装
-- `src/index.ts`: Toolのエクスポート
-
-#### ビルド
-
-```bash
-npm run build
-```
-
-#### テスト
-
-```bash
-npm test
 ```
 
 ## ライセンス
